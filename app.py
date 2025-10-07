@@ -27,7 +27,7 @@ from tools import (
 )
 
 # ---- Page config (favicon via env, secrets, or local file)
-LOCAL_FAVICON = "assets/favicon.png"  # put a PNG here if you want
+LOCAL_FAVICON = "assets/favicon.png" 
 PAGE_ICON = os.getenv("PAGE_ICON")
 try:
     PAGE_ICON = PAGE_ICON or (st.secrets.get("PAGE_ICON") if hasattr(st, "secrets") else None)
@@ -189,7 +189,6 @@ def generate_auto_dashboard(df, schema):
 
 def execute_tool_call(df, call):
     """Execute a single tool call and return the result"""
-    # Ensure PX/Plotly defaults reflect current UI **before** any figure creation
     _set_px_theme_from_ui()
 
     name = call.get("name")
